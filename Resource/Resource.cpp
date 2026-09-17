@@ -26,5 +26,44 @@ Resource::~Resource()
 
 }
 
+// Mutators
+void Resource::SetResourceID(string resourceID)
+{
+  this->ResourceID = resourceID;
+}
+
+void Resource::SetResourceName(string resourceName)
+{
+  this->ResourceName = resourceName;
+}
+
+void Resource::SetResourceType(string resourceType)
+{
+  this->ResourceType = resourcetype;
+}
+
+void Resource::SetAvailabilityStatus(string availabilityStatus)
+{
+  this->AvailabilityStatus = availabilityStatus;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
