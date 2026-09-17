@@ -33,3 +33,19 @@ class Resource
 
   void SetAvailabilityStatus(string availabilityStatus);
   
+  //Accessors
+  string GetResourceID() const;
+
+  string GetResourceName() const;
+
+  string GetResourceType() const;
+
+  string GetAvailabilityStatus() const;
+
+
+
+
+
+
+
+
