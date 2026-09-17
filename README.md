@@ -38,7 +38,7 @@ Project1/
 | |--Reservation.h  
 | |--ReservationManager.h  
 |  
-|--src/  
+|--src/ **Not sure what this is but it was in the project 1 file organization**
 | |--main.cpp  
 | |--Resource.cpp  
 | |--Reservation.cpp  
@@ -49,7 +49,7 @@ Project1/
 | L--reservations.txt  
 |  
 |--README.txt  
-L--.gitignore  
+L--.gitignore  **Might need to add makefile**
 
 **Installation**
 
@@ -82,11 +82,11 @@ L--.gitignore
 
 **Challenges / Limitations**
 
-------------------
+**Many and often lol -- NEED INPUT**
 
 **Future Improvements**
 
---------------------
+**Since this is milestone 1, I believe we should fill this in with milestone 2 more or less-- NEED INPUT**
 
 **Author**  
 Jason Wildman  
@@ -107,5 +107,5 @@ Fall 2026
 
 **References**
 
----------------------
+**Might need input might get removed**
 
