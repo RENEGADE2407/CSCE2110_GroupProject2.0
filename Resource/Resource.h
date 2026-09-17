@@ -24,4 +24,12 @@ class Resource
   // Destructor
   ~Resource();
 
+  // Mutators
+  void SetResourceID(string resourceID);
+
+  void SetResourceName(string resourceName);
+
+  void SetResourceType(string resourceType);
+
+  void SetAvailabilityStatus(string availabilityStatus);
   
