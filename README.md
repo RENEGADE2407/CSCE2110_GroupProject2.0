@@ -22,7 +22,7 @@ The project uses object-oriented programming and basic data structures to handle
 *  Implement linked list to store/manage active reservations.
 *  Implement queue to handle waiting list.
 *  Implement stack to store cancellation history and restore cancelled reservations.
-*  Implement reservation validation that prevents creating a reservation with a prexisting reservation ID, or a resource ID that does not exist
+*  Implement reservation validation that prevents creating a reservation with a preexisting reservation ID, or a resource ID that does not exist
 
 **_Technologies / Tools Used_**
 -------------------------------------------------------------------------------------
@@ -40,7 +40,7 @@ Project1/
 | |--Reservation.h  
 | |--ReservationManager.h  
 |  
-|--src/ **--Not sure what this is but it was in professor's project 1 file organization--**  
+|--src/
 | |--main.cpp  
 | |--Resource.cpp  
 | |--Reservation.cpp  
@@ -50,13 +50,14 @@ Project1/
 | |--resources.txt  
 | L--reservations.txt  
 |  
-|--README.txt  
-L--.gitignore  **--Might need to add makefile--**
+|--Makefile
+|--README.md  
+L--.gitignore
 
 **_Installation_**
 -------------------------------------------------------------------------------------
 
-1. Download the repository -- gitclone https://github.com/RENEGADE2407/CSCE2110_GroupProject2.0.git
+1. Download the repository -- git clone https://github.com/RENEGADE2407/CSCE2110_GroupProject2.0.git
 2. Change to project directory -- cd CSCE2110_GroupProject2.0
 3. Compile using makefile -- **!!!NEED MAKE FILE NAME MUEY IMPORTANTE!!!**
 
@@ -70,7 +71,7 @@ L--.gitignore  **--Might need to add makefile--**
 -----------------------------------------------------------------------------------------------
 
 * resources.txt
-* reservation.txt
+* reservations.txt
 
 **_Methodology_**
 ----------------------------------------------------------------------------------------------
@@ -123,6 +124,6 @@ Fall 2026
 
 **_References_**
 
-**--NEED INPU--T**
+**--NEED INPUT--**
 
 
