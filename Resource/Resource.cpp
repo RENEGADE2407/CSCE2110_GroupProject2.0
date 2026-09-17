@@ -47,6 +47,27 @@ void Resource::SetAvailabilityStatus(string availabilityStatus)
   this->AvailabilityStatus = availabilityStatus;
 }
 
+// Accessors
+string Resource::GetResourceID() const
+{
+  return this->ResourceID;
+}
+
+string Resource::GetResourceName() const
+{
+  return this->ResourceName;
+}
+
+string Resource::GetResourceType() const
+{
+  return this->ResourceType;
+}
+
+string Resource::GetAvailabilityStatus() const
+{
+  return this->AvailabilityStatus;
+}
+
 
 
 
