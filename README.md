@@ -11,13 +11,11 @@ The project uses object-oriented programming and basic data structures to handle
 *  Upload resource information through an input file.
 *  Display a menu that allows the user to do the following:
    *  Display all resources / display resource availability.
-   *  Sort resources.
    *  Create reservations for campus resources.
    *  Cancel, search, and display active reservations.
    *  Display waiting list.
    *  Display cancellation history.
    *  Restore the most recent cancelled reservation.
-   *  Generate report.
    *  Exit the system.
 *  Implement linked list to store/manage active reservations.
 *  Implement queue to handle waiting list.
@@ -77,11 +75,10 @@ L--.gitignore
 ----------------------------------------------------------------------------------------------
 
 1. Load resource information from data file.
-2. Store/display/search resources in a vector
+2. Store and display resources in a vector
 3. Create/validate/search/remove/display reservations
 4. Add students to waiting list queue (when resource unavailable)
 5. Store cancelled reservations in a stack (also capable of restoring most recently cancelled reservation)
-6. Generate report
 
 **_Results_**
 ------------------------------------------------------------------------------------------------------
@@ -92,13 +89,20 @@ L--.gitignore
 **_Challenges / Limitations_**
 ------------------------------------------------------------------------------------------------------
 
-**Many and often lol -- NEED INPUT**
+* Coordinating class interactions
+* Ensuring program compiles
+* Making sure invalid reservations are properly handled
+* Making all parts of the program work together 
 
 
 **_Future Improvements_**
 -------------------------------------------------------------------------------------------------------
 
-**Since this is milestone 1, I believe we should fill this in with milestone 2 more or less-- NEED INPUT**
+The goal for the future is to refine CRRS by implementing a search fucntion for resources and a sort function for reservations. Some other improvements include error handling for user interface and generating system reports for the following:
+* Active reservations
+* Resource utilization
+* Most requested resources
+* Waiting-list statistics
 
 <br>
 <br>
@@ -122,8 +126,5 @@ University of North Texas
 **_Semester_**  
 Fall 2026
 
-**_References_**
-
-**--NEED INPUT--**
 
 
