@@ -68,6 +68,13 @@ string Resource::GetAvailabilityStatus() const
   return this->AvailabilityStatus;
 }
 
+// Availiability check
+bool Resource::IsAvailable() const
+{
+  return this->AvailabilityStatus == "Available";
+}
+
+
 
 
 
