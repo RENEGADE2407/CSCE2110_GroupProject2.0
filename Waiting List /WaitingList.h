@@ -1,5 +1,5 @@
 #ifndef WAITINGLIST_H
-#def WAITINGLIST_H
+#define WAITINGLIST_H
 
 #include <iostream>
 #include <string>
