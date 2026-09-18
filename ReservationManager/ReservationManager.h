@@ -1,7 +1,7 @@
 #ifndef RESERVATIONMANAGER_H
 #define RESERVATIONMANAGER_H
 
-#include "Reservation.h"
+#include "../Reservation/Reservation.h"
 #include "../Cancellation History/CancellationHistory.h"
 #include <iostream>
 #include <string>
