@@ -4,7 +4,7 @@
 using namespace std;
 
 
-//********LINKED LIST OPERATIONS ********\\
+//********LINKED LIST OPERATIONS ********
 
 //default needs to start with head node being null
 ReservationManager::ReservationManager()
@@ -130,7 +130,7 @@ void ReservationManager::DisplayReservations() const
 
 
 
-//********RESERVATION MANAGEMENT ********\\
+//********RESERVATION MANAGEMENT ********
 	
 //this will create a new reservation
 bool ReservationManager::CreateReservation(Reservation reservation)
@@ -171,6 +171,43 @@ bool ReservationManager::CancelReservation(int reservationID)
 	
 	return true;
 	
+}
+
+//this will undo the most recent cancellation
+bool ReservationManager::UndoCancellation()
+{
+	//this is a placeholder, pop will fill this in with the most recently cancelleed reservation
+	Reservation restoredReservation;
+
+
+	/*this will simultaneously remove the top reservation from the stack then copy it into 
+	restoredReservations, AND if pop fails i.e. the stack is empty
+	 it will print an error msg and proceed to return false*/
+	if(!cancellationHistory.Pop(restoredReservation))
+	{
+		cout << "Error: No cancelled reservation to restore." << endl;
+		return false;
+	}
+
+	/*Need to validate that a new reservation hasnt used the cancelled reservations id
+	otherwise we risk duplicating the id. If the validation check fails this will put the
+	reservation back into the stack*/
+	if (!ValidateReservation(restoredReservation))
+	{
+		cancellationHistory.Push(restoredReservation);
+		return false;
+	}
+
+	//If we get here id is not in use so restore the reservation back into linked list
+	return InsertReservation(restoredReservation);
+}
+
+//This displays the cancellation history
+void ReservationManager::DisplayCancellationHistory() const
+{
+	/*main cant reach cancellationHistory cause its private
+	this passes the call along to stack's DisplayHistory funct.*/
+	cancellationHistory.DisplayHistory();
 }
 	
 //this will ensure the validity of a reservation
