@@ -3,6 +3,9 @@
 #include <string>
 using namespace std;
 
+
+//********LINKED LIST OPERATIONS ********\\
+
 //default needs to start with head node being null
 ReservationManager::ReservationManager()
 {
@@ -122,5 +125,65 @@ void ReservationManager::DisplayReservations() const
 		cout << "Reservation Date: " << current->reservation.GetReservationDate() << endl;
 		
 		current = current->next;
+	}
+}
+
+
+
+//********RESERVATION MANAGEMENT ********\\
+	
+//this will create a new reservation
+bool ReservationManager::CreateReservation(Reservation reservation)
+{
+	//check if reservation valid and then call insert reservation function
+	if(!ValidateReservation(reservation))
+	{
+		return false;
+	}
+	
+	else
+	{
+		return InsertReservation(reservation);
+	}
+}
+	
+//this will cancel a reservation using a reservation id
+bool ReservationManager::CancelReservation(int reservationID)
+{
+	//this will call search function to search linked list for reservation using specified id
+	// and it will create a pointer and store the result in "reservation"
+	Reservation* reservation = SearchReservation(reservationID);
+	
+	//check to see if the result from search is null (meaning not in linked list)
+	if(reservation == nullptr)
+	{
+		return false;
+	}
+	
+	//save copy of reservation before deleting it so it can be used in cancelation history
+	Reservation cancelledReservation = *reservation;
+	
+	//remove reservation
+	RemoveReservation(reservationID);
+	
+	return true;
+	
+}
+	
+//this will ensure the validity of a reservation
+bool ReservationManager::ValidateReservation(Reservation reservation)
+{
+	/*this gets the id from the reservation we need to validate and
+	passes that id to the search function and checks if the return value is null
+	*/
+	if(SearchReservation(reservation.GetReservationID()) != nullptr)
+	{
+		cout << "Error: Reservation ID already exists." << endl;
+		return false;
+	}
+	
+	else 
+	{
+		return true;
 	}
 }

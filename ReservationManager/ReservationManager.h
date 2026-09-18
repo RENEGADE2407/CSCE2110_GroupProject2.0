@@ -20,7 +20,9 @@ class ReservationManager
 	Node* head;
 	
 	public:
-	
+
+	//********LINKED LIST OPERATIONS ********\\
+
 	//condtructorr
 	ReservationManager();
 	
@@ -38,6 +40,18 @@ class ReservationManager
 	
 	//this displays all reservations in linked list
 	void DisplayReservations() const;
+
+
+	//********RESERVATION MANAGEMENT ********\\
+	
+	//this will create a new reservation
+	bool CreateReservation(Reservation reservation);
+	
+	//this will cancel a reservation using a reservation id
+	bool CancelReservation(int reservationID);
+	
+	//this will ensure the validity of a reservation
+	bool ValidateReservation(Reservation reservation);
 	
 	
 };
