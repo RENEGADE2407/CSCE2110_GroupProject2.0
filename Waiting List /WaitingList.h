@@ -5,11 +5,13 @@
 #include <string>
 #include <queue>
 
+using namespace std;
+
 class WaitingList
 {
 public:
 
-    // Stores the information for a student waiting for a resource
+    // Stores information about a student waiting for a resource
     struct WaitingStudent
     {
         int StudentID;
@@ -28,10 +30,10 @@ public:
     void AddStudent(int studentID, string studentName, string resourceID);
 
     // Removes the student at the front of the waiting list
-    // Returns true if a student was removed, false if the queue is empty
+    // Returns false if the queue is empty
     bool RemoveStudent(WaitingStudent& student);
 
-    // Displays all students currently in the waiting list
+    // Displays the students without changing the original queue
     void DisplayWaitingList() const;
 };
 
