@@ -2,7 +2,7 @@
 #define RESERVATIONMANAGER_H
 
 #include "Reservation.h"
-#include "CancellationHistory.h"
+#include "../Cancellation History/CancellationHistory.h"
 #include <iostream>
 #include <string>
 using namespace std;
