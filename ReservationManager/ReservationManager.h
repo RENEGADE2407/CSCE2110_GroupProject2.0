@@ -2,6 +2,7 @@
 #define RESERVATIONMANAGER_H
 
 #include "Reservation.h"
+#include "CancellationHistory.h"
 #include <iostream>
 #include <string>
 using namespace std;
@@ -18,6 +19,12 @@ class ReservationManager
 	
 	//this is where the linked llist starts
 	Node* head;
+
+	/*This will create a CancellationHistory object inside ReservationManager
+	so Manager has access to cancellation stack.
+	When a reservation is canccelled reservation manager can send that reservation
+	to the stack*/
+	CancellationHistory cancellationHistory;
 	
 	public:
 
