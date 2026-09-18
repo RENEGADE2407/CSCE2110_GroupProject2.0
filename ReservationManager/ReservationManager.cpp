@@ -203,7 +203,7 @@ bool ReservationManager::UndoCancellation()
 }
 
 //This displays the cancellation history
-void ReservationManager::DisplayCancellationHistory() const
+void ReservationManager::DisplaycancellationHistory() const
 {
 	/*main cant reach cancellationHistory cause its private
 	this passes the call along to stack's DisplayHistory funct.*/
