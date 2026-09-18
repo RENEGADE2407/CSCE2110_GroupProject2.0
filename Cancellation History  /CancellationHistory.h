@@ -1,7 +1,7 @@
 #ifndef CANCELLATIONHISTORY_H
 #define CANCELLATIONHISTORY_H
 
-#include "Reservation.h"
+#include "../Reservation/Reservation.h"
 #include <iostream>
 #include <stack>
 using namespace std;
