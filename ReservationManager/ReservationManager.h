@@ -28,7 +28,7 @@ class ReservationManager
 	
 	public:
 
-	//********LINKED LIST OPERATIONS ********\\
+	//********LINKED LIST OPERATIONS ********
 
 	//condtructorr
 	ReservationManager();
@@ -49,13 +49,21 @@ class ReservationManager
 	void DisplayReservations() const;
 
 
-	//********RESERVATION MANAGEMENT ********\\
+	//********RESERVATION MANAGEMENT ********
 	
 	//this will create a new reservation
 	bool CreateReservation(Reservation reservation);
 	
 	//this will cancel a reservation using a reservation id
 	bool CancelReservation(int reservationID);
+
+	/*this is to restore the most reecently canceled reservation by taking it from the
+	stack and putting it back into the linked list
+	*/
+	bool UndoCancellation();
+
+	/*this is for displaying cancellation history.*/
+	void DisplaycancellationHistory() const;
 	
 	//this will ensure the validity of a reservation
 	bool ValidateReservation(Reservation reservation);
