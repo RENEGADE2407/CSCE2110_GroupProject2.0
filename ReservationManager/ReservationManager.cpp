@@ -162,6 +162,9 @@ bool ReservationManager::CancelReservation(int reservationID)
 	
 	//save copy of reservation before deleting it so it can be used in cancelation history
 	Reservation cancelledReservation = *reservation;
+
+	//add cancelled reservation to cancellation history
+	cancellationHistory.Push(cancelledReservation);
 	
 	//remove reservation
 	RemoveReservation(reservationID);
