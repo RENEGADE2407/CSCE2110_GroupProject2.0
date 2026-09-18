@@ -1,6 +1,6 @@
 #include <iostream>
 
-#include "WaitingList/WaitingList.h"
+#include "Waiting List/WaitingList.h"
 #include "CancellationHistory/CancellationHistory.h"
 
 using namespace std;
