@@ -141,6 +141,20 @@ bool ResourceManager::IsResourceAvailable(string resourceID)
 }
 
 
+bool ResourceManager::SetResourceAvailability(string resourceID, string availabilityStatus)
+{
+  Resource* resource = SearchResourceByID(resourceID);
+
+  if (resource = nullptr)
+  {
+    cout << "Error: Resource ID \"" << resourceID << "\" does not exist." << endl;
+    return false;
+  }
+
+  resource->GetAvailabilityStatus(availabilityStatus);
+  return true;
+}
+
 
 
 
