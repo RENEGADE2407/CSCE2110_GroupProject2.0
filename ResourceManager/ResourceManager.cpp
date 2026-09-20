@@ -1,8 +1,8 @@
 #include "ResourceManager.h"
 #include <fstream>
-#inlcude <sstream>
+#include <sstream>
 #include <iostream>
-#inlcude <string>
+#include <string>
 using namespace std;
 
 
