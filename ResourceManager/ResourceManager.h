@@ -26,3 +26,15 @@ class ResourceManager
   void DisplayResources() const;
 
   void DisplayAvailability() const;
+
+  Resource* SearchResourceByID(string resourceID);
+
+  bool ValidateResourceID(string resourceID);
+
+  bool IsResourceAvailable(string resourceID);
+
+  bool SetResourceAvailability(string resourceID, string availabilityStatus);
+
+};
+
+#endif
