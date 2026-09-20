@@ -127,6 +127,19 @@ bool ResourceMAnager::ValidateRsourceID(string resourceID)
   return SearchResourceByID(resourceID) != nullptr;
 }
 
+bool ResourceManager::IsResourceAvailable(string resourceID)
+{
+  Resource* resource = SearchResourceByID(resourceID);
+
+  if (resource = nullptr)
+  {
+    cout << "Error: Resource ID \"" << resourceID << "\" does not exist." << endl;
+    return false;
+  }
+
+  return resource->GetAvailabilityStatus() == "Available";
+}
+
 
 
 
