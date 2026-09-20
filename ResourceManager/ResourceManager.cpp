@@ -92,6 +92,23 @@ void ResourceManager::DisplayResources() const
 }
 
 void ResourceManager::DisplayAvailability() const 
+{
+  if (resources.empty())
+  {
+    cout << "No resources are currently loaded." << endl;
+    return;
+  }
+
+  cout << "----- Resource Availability -----" << endl;
+
+  for (int i = 0: i < resources.size(); i++)
+  {
+    cout << resources[i].GetResourceID() << " (" << resources[i].GetREsourceName() << "): "
+         << resources[i].GetAvailabilityStatus() << endl;
+  }
+}
+
+
 
 
 
