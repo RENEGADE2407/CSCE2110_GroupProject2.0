@@ -122,6 +122,13 @@ Resource* ResourceManager::SearchResourceByID(string resourceID)
 }
 
 
+bool ResourceMAnager::ValidateRsourceID(string resourceID)
+{
+  return SearchResourceByID(resourceID) != nullptr;
+}
+
+
+
 
 
 
