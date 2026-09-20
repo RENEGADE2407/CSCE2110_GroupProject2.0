@@ -108,6 +108,21 @@ void ResourceManager::DisplayAvailability() const
   }
 }
 
+Resource* ResourceManager::SearchResourceByID(string resourceID)
+{
+  for (int i = 0; i < resources.size(); i++)
+  {
+    if (resources[i].GetResourceID() == resourceID)
+    {
+      return &resources[i];
+    }
+  }
+
+  return nullptr;
+}
+
+
+
 
 
 
