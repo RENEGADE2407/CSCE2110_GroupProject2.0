@@ -55,15 +55,23 @@ L--.gitignore
 **_Installation_**
 -------------------------------------------------------------------------------------
 
-1. Download the repository -- git clone https://github.com/RENEGADE2407/CSCE2110_GroupProject2.0.git
-2. Change to project directory -- cd CSCE2110_GroupProject2.0
-3. Compile using makefile -- **!!!NEED MAKE FILE NAME MUEY IMPORTANTE!!!**
+1. Clone the repository:
+   git clone https://github.com/RENEGADE2407/CSCE2110_GroupProject2.0.git
+
+2. Change to the project directory:
+   cd CSCE2110_GroupProject2.0
+
+3. Compile the project:
+   g++ main.cpp Resource/Resource.cpp ResourceManager/ResourceManager.cpp Reservation/Reservation.cpp ReservationManager/ReservationManager.cpp "Waiting List/WaitingList.cpp" "Cancellation History/CancellationHistory.cpp" -o crrs
 
 **_How to Run_**
 --------------------------------------------------------------------------------------------
 
-1. After compiling, run executable **!!!NEED EXECUTABLE!!!**
-2. Use menu to interact with reservation system
+Run the executable:
+
+./crrs
+
+The program will load resources from resources.txt and reservations from reservations.txt and display a command-line menu.
 
 **_Data Set / Input_**
 -----------------------------------------------------------------------------------------------
