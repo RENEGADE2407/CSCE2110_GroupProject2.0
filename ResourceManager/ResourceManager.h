@@ -17,7 +17,7 @@ class ResourceManager
 
   ResourceManager();
 
-  `ResourceMAnager();
+  ~ResourceManager();
 
   bool LoadResourcesFromFile(string filename);
 
