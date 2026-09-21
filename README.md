@@ -91,7 +91,15 @@ The program will load resources from resources.txt and reservations from reserva
 **_Results_**
 ------------------------------------------------------------------------------------------------------
 
-**In terms of results..... we have no results-- NEED INPUT**
+The Campus Resource Reservation System was implemented as a command-line C++ application. The system loads resource information from a text file, stores resources in a vector, and displays resource information and availability.
+
+Active reservations are stored using a linked list. The program supports creating, searching, displaying, and cancelling reservations. Cancelled reservations are stored using a stack so that the most recently cancelled reservation can be restored.
+
+A FIFO queue is used to manage students waiting for unavailable resources. The system provides menu options for displaying, adding, and removing students from the waiting list.
+
+The system also includes input validation for invalid menu choices, nonexistent resources, duplicate reservation IDs, and unavailable reservation resources.
+
+Testing was performed for resource loading, reservation creation, reservation cancellation, waiting-list operations, cancellation history, and undo cancellation.
 
 
 **_Challenges / Limitations_**
