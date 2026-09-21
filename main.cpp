@@ -401,8 +401,17 @@ int main()
 
             case 11:
             {
-                if (reservationManager.UndoCancellation())
+                Reservation restoredReservation;
+
+                if (reservationManager.UndoCancellation(restoredReservation))
                 {
+                    // The reservation was restored, so its resource must
+                    // become unavailable again.
+                    resourceManager.SetResourceAvailability(
+                        restoredReservation.GetResourceID(),
+                        "Unavailable"
+                    );
+
                     cout << "Cancellation successfully undone."
                          << endl;
                 }
