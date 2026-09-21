@@ -39,7 +39,7 @@ void Resource::SetResourceName(string resourceName)
 
 void Resource::SetResourceType(string resourceType)
 {
-  this->ResourceType = resourcetype;
+    this->ResourceType = resourceType;
 }
 
 void Resource::SetAvailabilityStatus(string availabilityStatus)
