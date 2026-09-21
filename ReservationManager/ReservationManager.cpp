@@ -174,32 +174,25 @@ bool ReservationManager::CancelReservation(int reservationID)
 }
 
 //this will undo the most recent cancellation
-bool ReservationManager::UndoCancellation()
+bool ReservationManager::UndoCancellation(Reservation& restoredReservation)
 {
-	//this is a placeholder, pop will fill this in with the most recently cancelleed reservation
-	Reservation restoredReservation;
+    // Pop the most recently cancelled reservation from the stack.
+    if (!cancellationHistory.Pop(restoredReservation))
+    {
+        cout << "Error: No cancelled reservation to restore." << endl;
+        return false;
+    }
 
+    // Make sure another reservation has not reused this ID.
+    // If validation fails, put the reservation back on the stack.
+    if (!ValidateReservation(restoredReservation))
+    {
+        cancellationHistory.Push(restoredReservation);
+        return false;
+    }
 
-	/*this will simultaneously remove the top reservation from the stack then copy it into 
-	restoredReservations, AND if pop fails i.e. the stack is empty
-	 it will print an error msg and proceed to return false*/
-	if(!cancellationHistory.Pop(restoredReservation))
-	{
-		cout << "Error: No cancelled reservation to restore." << endl;
-		return false;
-	}
-
-	/*Need to validate that a new reservation hasnt used the cancelled reservations id
-	otherwise we risk duplicating the id. If the validation check fails this will put the
-	reservation back into the stack*/
-	if (!ValidateReservation(restoredReservation))
-	{
-		cancellationHistory.Push(restoredReservation);
-		return false;
-	}
-
-	//If we get here id is not in use so restore the reservation back into linked list
-	return InsertReservation(restoredReservation);
+    // Restore the reservation to the linked list.
+    return InsertReservation(restoredReservation);
 }
 
 //This displays the cancellation history
