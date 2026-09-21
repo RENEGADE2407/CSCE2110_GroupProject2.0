@@ -60,7 +60,7 @@ class ReservationManager
 	/*this is to restore the most reecently canceled reservation by taking it from the
 	stack and putting it back into the linked list
 	*/
-	bool UndoCancellation();
+	bool UndoCancellation(Reservation& restoredReservation);
 
 	/*this is for displaying cancellation history.*/
 	void DisplaycancellationHistory() const;
