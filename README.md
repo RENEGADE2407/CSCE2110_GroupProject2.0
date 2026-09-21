@@ -55,15 +55,23 @@ L--.gitignore
 **_Installation_**
 -------------------------------------------------------------------------------------
 
-1. Download the repository -- git clone https://github.com/RENEGADE2407/CSCE2110_GroupProject2.0.git
-2. Change to project directory -- cd CSCE2110_GroupProject2.0
-3. Compile using makefile -- **!!!NEED MAKE FILE NAME MUEY IMPORTANTE!!!**
+1. Clone the repository:
+   git clone https://github.com/RENEGADE2407/CSCE2110_GroupProject2.0.git
+
+2. Change to the project directory:
+   cd CSCE2110_GroupProject2.0
+
+3. Compile the project:
+   g++ main.cpp Resource/Resource.cpp ResourceManager/ResourceManager.cpp Reservation/Reservation.cpp ReservationManager/ReservationManager.cpp "Waiting List/WaitingList.cpp" "Cancellation History/CancellationHistory.cpp" -o crrs
 
 **_How to Run_**
 --------------------------------------------------------------------------------------------
 
-1. After compiling, run executable **!!!NEED EXECUTABLE!!!**
-2. Use menu to interact with reservation system
+Run the executable:
+
+./crrs
+
+The program will load resources from resources.txt and reservations from reservations.txt and display a command-line menu.
 
 **_Data Set / Input_**
 -----------------------------------------------------------------------------------------------
@@ -83,7 +91,15 @@ L--.gitignore
 **_Results_**
 ------------------------------------------------------------------------------------------------------
 
-**In terms of results..... we have no results-- NEED INPUT**
+The Campus Resource Reservation System was implemented as a command-line C++ application. The system loads resource information from a text file, stores resources in a vector, and displays resource information and availability.
+
+Active reservations are stored using a linked list. The program supports creating, searching, displaying, and cancelling reservations. Cancelled reservations are stored using a stack so that the most recently cancelled reservation can be restored.
+
+A FIFO queue is used to manage students waiting for unavailable resources. The system provides menu options for displaying, adding, and removing students from the waiting list.
+
+The system also includes input validation for invalid menu choices, nonexistent resources, duplicate reservation IDs, and unavailable reservation resources.
+
+Testing was performed for resource loading, reservation creation, reservation cancellation, waiting-list operations, cancellation history, and undo cancellation.
 
 
 **_Challenges / Limitations_**
