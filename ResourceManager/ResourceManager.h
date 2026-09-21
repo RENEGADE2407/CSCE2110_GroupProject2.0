@@ -1,7 +1,7 @@
 #ifndef RESOURCEMANAGER_H
 #define RESOURCEMANAGER_H
 
-#include "Resource.h"
+#include "../Resource/Resource.h"
 #include <iostream>
 #include <string>
 #include <vector>
