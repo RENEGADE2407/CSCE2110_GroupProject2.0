@@ -6,6 +6,51 @@
 
 using namespace std;
 
+void ResourceManager::QuickSort(int low, int high)
+{
+    //this checks if there are still 2 or more resourcees to sort
+    if (low < high)
+    {
+        //partitions resources and gets pivots final position
+        int pivotIndex = Partition(low, high);
+
+        //this sorts the resources left of the pivot
+        QuickSort(low, pivotIndex - 1);
+
+        //sorts the resources on right of the pivot
+        QuickSort(pivotIndex + 1, high);
+        
+    }
+}
+
+int ResourceManager::Partition(int low, int high)
+{
+    /*the name of the last resource = the pivot,
+    all resources that come before the pivot (alphabetically)
+    will be moved to the left of the pivot*/
+    string pivot = resources[high].GetResourceName();
+
+    //i will keep track of where the next resource that comes before the pivot should be placed
+    int i = low -1;
+
+    //this will go thru each resource before the pivot
+    for (int j = low; j < high; ++j)
+    {
+         //if resource's name comes before pivots name increment i and swap resource into that spot
+         if (resources[j].GetResourceName() < pivot)
+         {
+             ++i;
+
+             swap(resources[i], resources[j]);
+         }
+    }
+
+    //this moves the pivot into its sorted location
+    swap(resources[i + 1], resources[high]);
+
+    return i + 1;
+}
+
 // Default constructor
 ResourceManager::ResourceManager()
 {
@@ -193,3 +238,13 @@ bool ResourceManager::SetResourceAvailability(
 
     return true;
 }
+
+void ResourceManager::SortResourcesByName()
+{
+    //this starts the quicksort using the first and last resource
+    if (resources.size() > 1)
+    {
+        QuickSort(0, resources.size() - 1);
+    }
+}
+
