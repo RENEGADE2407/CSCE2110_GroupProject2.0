@@ -13,6 +13,10 @@ class ResourceManager
 
   vector<Resource> resources;
 
+  void QuickSort(int low, int high);
+
+  int Partition(int low, int high);
+
   public:
 
   ResourceManager();
@@ -34,6 +38,8 @@ class ResourceManager
   bool IsResourceAvailable(string resourceID);
 
   bool SetResourceAvailability(string resourceID, string availabilityStatus);
+
+  void SortResourcesByName();
 
 };
 
