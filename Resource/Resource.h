@@ -12,6 +12,7 @@ class Resource
   string ResourceName;
   string ResourceType;
   string AvailabilityStatus;
+  int RequestCount;
 
   public:
 
@@ -32,6 +33,8 @@ class Resource
   void SetResourceType(string resourceType);
 
   void SetAvailabilityStatus(string availabilityStatus);
+
+  void SetRequestCount(int count);
   
   //Accessors
   string GetResourceID() const;
@@ -41,6 +44,8 @@ class Resource
   string GetResourceType() const;
 
   string GetAvailabilityStatus() const;
+
+  string GetRequestCount() const;
 
 
 
