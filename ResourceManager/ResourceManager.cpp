@@ -25,10 +25,10 @@ void ResourceManager::QuickSort(int low, int high)
 
 int ResourceManager::Partition(int low, int high)
 {
-    /*the name of the last resource = the pivot,
-    all resources that come before the pivot (alphabetically)
-    will be moved to the left of the pivot*/
-    string pivot = resources[high].GetResourceName();
+    /*the request count of the last resource = the pivot,
+    resources with more requests will be moved to left of the pivot
+    others will be moved to the right of the pivot*/
+    int pivot = resources[high].GetRequestCount();
 
     //i will keep track of where the next resource that comes before the pivot should be placed
     int i = low -1;
@@ -36,8 +36,8 @@ int ResourceManager::Partition(int low, int high)
     //this will go thru each resource before the pivot
     for (int j = low; j < high; ++j)
     {
-         //if resource's name comes before pivots name increment i and swap resource into that spot
-         if (resources[j].GetResourceName() < pivot)
+         //if resource has more requests than pivot increment i and swap resource into that spot
+         if (resources[j].GetRequestCount() > pivot)
          {
              ++i;
 
@@ -239,7 +239,7 @@ bool ResourceManager::SetResourceAvailability(
     return true;
 }
 
-void ResourceManager::SortResourcesByName()
+void ResourceManager::SortResourcesByRequestCount()
 {
     //this starts the quicksort using the first and last resource
     if (resources.size() > 1)
@@ -248,3 +248,14 @@ void ResourceManager::SortResourcesByName()
     }
 }
 
+void ResourceManager::SetRequestCount(string resourceID, int count)
+{
+    for (int i = 0; i < resources.size(); ++i)
+        {
+            if(resources[i].GetResourceID() == resourceID)
+            {
+                resources[i].SetRequestCount(count);
+                return;
+            }
+        }
+}
