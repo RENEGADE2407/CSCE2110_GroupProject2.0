@@ -69,3 +69,31 @@ void WaitingList::DisplayWaitingList() const
         position++;
     }
 }
+
+
+
+int WaitingList::CountWaitingForResource(string resourceID) const
+{
+
+    int count = 0;
+
+    queue<WaitingStudent> tempQueue = waitingQueue;
+
+    //goes thu every student in the waiting list
+    while (!tempQueue.empty())
+    {
+        //checks if student is waiting for this resourece
+        if(tempQueue.front().ResourceID == resourceID)
+        {
+            ++count;
+        }
+    
+
+    //move to next student in queue
+    tempQueue.pop();
+    }
+
+    return count;
+            
+}
+    
