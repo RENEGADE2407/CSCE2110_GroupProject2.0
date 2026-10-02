@@ -49,6 +49,8 @@ class ResourceManager
   //this will add up the reservations and the students in a waiting list for a resource then repeat for every resource
   void CalculateAllRequestCounts(ReservationManager& reservationManager, WaitingList& waitingList);
 
+  //this will display the most requested resource
+  void DispalyMostRequestedResources() const;
 };
 
 #endif
