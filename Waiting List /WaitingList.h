@@ -35,6 +35,10 @@ public:
 
     // Displays the students without changing the original queue
     void DisplayWaitingList() const;
+
+    //stores count waiting for a resource
+    int CountWaitingForResource(string resourceID) const;
+
 };
 
 #endif
