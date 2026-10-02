@@ -9,6 +9,7 @@ Resource::Resource()
   ResourceName = "empty";
   ResourceType = "empty";
   AvailabilityStatus = "Available";
+  RequestCount = 0;
 }
 // Overloaded Constructor
 Resource:: Resource(string resourceID, string resourceName, string resourceType, string availabilityStatus)
@@ -47,6 +48,11 @@ void Resource::SetAvailabilityStatus(string availabilityStatus)
   this->AvailabilityStatus = availabilityStatus;
 }
 
+void Resource::SetRequestCount(int count)
+{
+  this->RequestCount = count;
+}
+
 // Accessors
 string Resource::GetResourceID() const
 {
@@ -66,6 +72,11 @@ string Resource::GetResourceType() const
 string Resource::GetAvailabilityStatus() const
 {
   return this->AvailabilityStatus;
+}
+
+int Resource::GetRequestCount() const
+{
+  return this->RequestCount;
 }
 
 // Availiability check
