@@ -41,6 +41,8 @@ class ResourceManager
 
   void SortResourcesByName();
 
+  void SetRequestCount(string resourceID, int count);
+
 };
 
 #endif
