@@ -220,3 +220,35 @@ bool ReservationManager::ValidateReservation(Reservation reservation)
 		return true;
 	}
 }
+
+//this counts reserved resources for sorting later
+int ReservationManager::CountReservedResources(string resourceID) const
+{
+	int count = 0;
+
+	Node* current = head;
+
+
+	//this will go thru every active reservation
+	while (current != nullptr)
+		{
+			//this will compare the reservation to the resoouce ID
+			if (current->reservation.GetResourceID() == resourceID)
+			{
+				//increment count
+				++count;
+			}
+
+			current = current->next;
+		}
+
+
+	return count;
+
+}
+
+
+
+
+
+
