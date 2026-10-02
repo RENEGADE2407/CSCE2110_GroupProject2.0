@@ -67,6 +67,9 @@ class ReservationManager
 	
 	//this will ensure the validity of a reservation
 	bool ValidateReservation(Reservation reservation);
+
+	//this will be a counter for reservations to be used later in sorting most requested resources
+	int CountReservedResources(string resourceID) const;
 	
 	
 };
