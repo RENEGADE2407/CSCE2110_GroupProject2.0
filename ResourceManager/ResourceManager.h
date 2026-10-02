@@ -39,7 +39,7 @@ class ResourceManager
 
   bool SetResourceAvailability(string resourceID, string availabilityStatus);
 
-  void SortResourcesByName();
+  void SortResourcesByRequestCount();
 
   void SetRequestCount(string resourceID, int count);
 
