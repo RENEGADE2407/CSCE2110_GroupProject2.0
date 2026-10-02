@@ -1,4 +1,6 @@
 #include "ResourceManager.h"
+#include "../ReservationManager/ReservationManager.h"
+#include "../WaitingList/WaitingList.h"
 #include <fstream>
 #include <sstream>
 #include <iostream>
@@ -257,5 +259,28 @@ void ResourceManager::SetRequestCount(string resourceID, int count)
                 resources[i].SetRequestCount(count);
                 return;
             }
+        }
+}
+
+//this will add all the irequests and the students in a waiting list for a resource then repeat for every resource
+void ResourceManager::CalculateAllRequestCounts(ReservationManager& reservationManager, WaitingList& waitingList)
+{
+    //this goes thru every resource
+    for(int i = 0; i < resources.size(); ++i)
+        {
+            //gets id of the current resource
+            string resourceID = resources[i].GetResourceID();
+
+            //gets number of active reservation
+            int reservationCount = reservationManager.CountReservedResources(resourceID);
+
+            //gets the num of students in a waiting list for a resource
+            int waitingCount = waitingList.CountWaitingForResource(resourceID);
+
+            //adds them together
+            int totalRequestCount = reservationCount + waitingCount;
+
+            //store total in resource info
+            resources[i].SetRequestCount(totalRequestCount);
         }
 }
