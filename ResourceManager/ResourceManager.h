@@ -7,6 +7,9 @@
 #include <vector>
 using namespace std;
 
+class ReservationManager;
+class WaitingList;
+
 class ResourceManager
 {
   private:
@@ -42,6 +45,9 @@ class ResourceManager
   void SortResourcesByRequestCount();
 
   void SetRequestCount(string resourceID, int count);
+
+  //this will add up the reservations and the students in a waiting list for a resource then repeat for every resource
+  void CalculateAllRequestCounts(ReservationManager& reservationManager, WaitingList& waitingList);
 
 };
 
