@@ -99,6 +99,7 @@ void DisplayMenu()
     cout << "9. Remove student from waiting list" << endl;
     cout << "10. Display cancellation history" << endl;
     cout << "11. Undo most recent cancellation" << endl;
+    cout << "12. Display the most requested resources" << endl;
     cout << "0. Exit" << endl;
     cout << "========================================" << endl;
     cout << "Enter your choice: ";
@@ -423,6 +424,15 @@ int main()
 
                 break;
             }
+
+            case 12:
+            resourceManager.CalculateAllRequestCounts(reservationManager, waitingList);
+
+            resourceManager.SortResourcesByRequestCount();
+
+            resourceManager.DisplayMostRequestedResources();
+
+            break;
 
             case 0:
             {
