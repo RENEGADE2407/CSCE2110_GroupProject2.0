@@ -45,7 +45,7 @@ class Resource
 
   string GetAvailabilityStatus() const;
 
-  string GetRequestCount() const;
+  int GetRequestCount() const;
 
 
 
