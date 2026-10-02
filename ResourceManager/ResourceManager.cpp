@@ -262,7 +262,7 @@ void ResourceManager::SetRequestCount(string resourceID, int count)
         }
 }
 
-//this will add all the irequests and the students in a waiting list for a resource then repeat for every resource
+//this will add all the requests and the students in a waiting list for a resource then repeat for every resource
 void ResourceManager::CalculateAllRequestCounts(ReservationManager& reservationManager, WaitingList& waitingList)
 {
     //this goes thru every resource
@@ -282,5 +282,23 @@ void ResourceManager::CalculateAllRequestCounts(ReservationManager& reservationM
 
             //store total in resource info
             resources[i].SetRequestCount(totalRequestCount);
+        }
+}
+
+//this will display the most requested resources
+void ResourceManager::DisplayMostRequestedResources() const
+{
+    //checks if empty
+    if(resources.empty())
+    {
+        cout << "No resources are currently loaded." << endl;
+        return;
+    }
+
+    cout << "\n=====MOST REQUESTED RESOURCES =====" << endl;
+
+    for(int i = 0; i < resources.size(); ++i)
+        {
+            cout << i + 1 << ". " << resources[i].GetResourceName() << " | Requests: " << resources[i].GetRequestCount() << endl;
         }
 }
