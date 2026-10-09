@@ -3,7 +3,7 @@
   
 This project is a simulation of a reservation system for campus resources. CRRS is a C++ program that uses a command line menu to interact with the system. 
 
-The project uses object-oriented programming and basic data structures to handle the system's data. For example, a vector is used for resource inventory, a stack is used to store cancelled reservations for the undo cancellation function, a linked list is used to store active reservations, and a FIFO queue is used to manage the waiting list for resources. 
+The project uses object-oriented programming and basic data structures to handle the system's data. For example, a vector is used for resource inventory, a stack is used to store cancelled reservations for the undo cancellation function, a linked list is used to store active reservations, and a FIFO queue is used to manage the waiting list for resources. Additionally a quick sort algorithm is used to sort the most requested resources and can be displayed in a sytem report.
 
 **_Objectives_**
 -------------------------------------------------------------------------------------
@@ -15,6 +15,7 @@ The project uses object-oriented programming and basic data structures to handle
    *  Cancel, search, and display active reservations.
    *  Display waiting list.
    *  Display cancellation history.
+   *  Run report that displays a sorted list of the most requested resources
    *  Restore the most recent cancelled reservation.
    *  Exit the system.
 *  Implement linked list to store/manage active reservations.
@@ -48,7 +49,6 @@ Project1/
 | |--resources.txt  
 | L--reservations.txt  
 |  
-|--Makefile
 |--README.md  
 L--.gitignore
 
@@ -117,7 +117,6 @@ Testing was performed for resource loading, reservation creation, reservation ca
 The goal for the future is to refine CRRS by implementing a search fucntion for resources and a sort function for reservations. Some other improvements include error handling for user interface and generating system reports for the following:
 * Active reservations
 * Resource utilization
-* Most requested resources
 * Waiting-list statistics
 
 <br>
