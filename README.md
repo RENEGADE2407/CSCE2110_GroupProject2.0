@@ -111,14 +111,6 @@ Testing was performed for resource loading, reservation creation, reservation ca
 * Making all parts of the program work together 
 
 
-**_Future Improvements_**
--------------------------------------------------------------------------------------------------------
-
-The goal for the future is to refine CRRS by implementing a search fucntion for resources and a sort function for reservations. Some other improvements include error handling for user interface and generating system reports for the following:
-* Active reservations
-* Resource utilization
-* Waiting-list statistics
-
 <br>
 <br>
 <br>
