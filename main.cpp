@@ -100,6 +100,8 @@ void DisplayMenu()
     cout << "10. Display cancellation history" << endl;
     cout << "11. Undo most recent cancellation" << endl;
     cout << "12. Display the most requested resources" << endl;
+    cout << "13. Display resource utilization" << endl;
+    cout << "14. Display waiting-list statistics" << endl;
     cout << "0. Exit" << endl;
     cout << "========================================" << endl;
     cout << "Enter your choice: ";
