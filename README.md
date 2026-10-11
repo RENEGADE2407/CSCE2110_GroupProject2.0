@@ -15,7 +15,8 @@ The project uses object-oriented programming and basic data structures to handle
    *  Cancel, search, and display active reservations.
    *  Display waiting list.
    *  Display cancellation history.
-   *  Run report that displays a sorted list of the most requested resources
+   *  Run report that displays a sorted list of the most requested resources.
+   *  Run report that displays the waiting list statistics.
    *  Restore the most recent cancelled reservation.
    *  Exit the system.
 *  Implement linked list to store/manage active reservations.
