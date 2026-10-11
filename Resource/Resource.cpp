@@ -18,6 +18,7 @@ Resource:: Resource(string resourceID, string resourceName, string resourceType,
   this->ResourceName = resourceName;
   this->ResourceType = resourceType;
   this->AvailabilityStatus = availabilityStatus;
+  this->RequestCount = 0;
 }
 
 //Destructor
