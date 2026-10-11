@@ -50,7 +50,7 @@ class ResourceManager
   void CalculateAllRequestCounts(ReservationManager& reservationManager, WaitingList& waitingList);
 
   //this will display the most requested resource
-  void DispalyMostRequestedResources() const;
+  void DisplayMostRequestedResources() const;
 };
 
 #endif
