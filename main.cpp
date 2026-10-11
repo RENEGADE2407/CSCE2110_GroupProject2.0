@@ -442,6 +442,15 @@ int main()
                      << endl;
                 break;
             }
+            
+            case 13:
+                resourceManager.DisplayResourceUtilization(reservationManager);
+                break;
+
+           case 14:
+                resourceManager.DisplayWaitingListStatistics(waitingList);
+                break;
+
 
             default:
             {
