@@ -302,3 +302,54 @@ void ResourceManager::DisplayMostRequestedResources() const
             cout << i + 1 << ". " << resources[i].GetResourceName() << " | Requests: " << resources[i].GetRequestCount() << endl;
         }
 }
+
+
+void ResourceManager::DisplayResourceUtilization(
+    const ReservationManager& reservationManager) const
+{
+    if (resources.empty())
+    {
+        cout << "No resources are currently loaded." << endl;
+        return;
+    }
+
+    cout << "\n===== RESOURCE UTILIZATION =====" << endl;
+
+    for (size_t i = 0; i < resources.size(); ++i)
+    {
+        const string resourceID = resources[i].GetResourceID();
+
+        const int reservationCount =
+            reservationManager.CountReservedResources(resourceID);
+
+        cout << "Resource ID: " << resourceID
+             << " | Name: " << resources[i].GetResourceName()
+             << " | Active Reservations: " << reservationCount
+             << endl;
+    }
+}
+
+void ResourceManager::DisplayWaitingListStatistics(
+    const WaitingList& waitingList) const
+{
+    if (resources.empty())
+    {
+        cout << "No resources are currently loaded." << endl;
+        return;
+    }
+
+    cout << "\n===== WAITING-LIST STATISTICS =====" << endl;
+
+    for (size_t i = 0; i < resources.size(); ++i)
+    {
+        const string resourceID = resources[i].GetResourceID();
+
+        const int waitingCount =
+            waitingList.CountWaitingForResource(resourceID);
+
+        cout << "Resource ID: " << resourceID
+             << " | Name: " << resources[i].GetResourceName()
+             << " | Students Waiting: " << waitingCount
+             << endl;
+    }
+}
