@@ -266,7 +266,7 @@ void ResourceManager::SetRequestCount(string resourceID, int count)
 void ResourceManager::CalculateAllRequestCounts(ReservationManager& reservationManager, WaitingList& waitingList)
 {
     //this goes thru every resource
-    for(int i = 0; i < resources.size(); ++i)
+    for (size_t i = 0; i < resources.size(); ++i)
         {
             //gets id of the current resource
             string resourceID = resources[i].GetResourceID();
