@@ -1,6 +1,6 @@
 #include "ResourceManager.h"
 #include "../ReservationManager/ReservationManager.h"
-#include "../WaitingList/WaitingList.h"
+#include "../Waiting List/WaitingList.h"
 #include <fstream>
 #include <sstream>
 #include <iostream>
