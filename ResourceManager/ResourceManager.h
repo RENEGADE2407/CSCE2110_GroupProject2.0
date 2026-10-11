@@ -51,6 +51,13 @@ class ResourceManager
 
   //this will display the most requested resource
   void DisplayMostRequestedResources() const;
+
+  // Displays the number of active reservations for each resource.
+  void DisplayResourceUtilization(const ReservationManager& reservationManager) const;
+
+  // Displays the number of students waiting for each resource.
+  void DisplayWaitingListStatistics(const WaitingList& waitingList) const;
+
 };
 
 #endif
