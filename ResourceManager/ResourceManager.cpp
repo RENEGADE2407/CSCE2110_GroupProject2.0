@@ -252,7 +252,7 @@ void ResourceManager::SortResourcesByRequestCount()
 
 void ResourceManager::SetRequestCount(string resourceID, int count)
 {
-    for (int i = 0; i < resources.size(); ++i)
+    for (size_t i = 0; i < resources.size(); ++i)
         {
             if(resources[i].GetResourceID() == resourceID)
             {
