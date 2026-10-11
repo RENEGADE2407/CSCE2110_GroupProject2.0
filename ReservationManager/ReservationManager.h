@@ -72,13 +72,6 @@ class ReservationManager
 	int CountReservedResources(string resourceID) const;
 
 	
- 	// Displays the number of active reservations for each resource.
-  	void DisplayResourceUtilization(const ReservationManager& reservationManager) const;
-
-  	// Displays the number of students waiting for each resource.
-  	void DisplayWaitingListStatistics(const WaitingList& waitingList) const;
-
-	
 };
 
 
