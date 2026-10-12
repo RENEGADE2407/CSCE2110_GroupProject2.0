@@ -377,9 +377,6 @@ int main()
                     resourceID
                 );
 
-                cout << "Student added to waiting list."
-                     << endl;
-
                 break;
             }
 
