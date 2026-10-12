@@ -3,6 +3,25 @@
 // Adds a student to the back of the waiting list
 void WaitingList::AddStudent(int studentID, string studentName, string resourceID)
 {
+    // Make a copy of the queue to check for duplicates
+    queue<WaitingStudent> tempQueue = waitingQueue;
+
+    // Check whether this student is already waiting for this resource
+    while (!tempQueue.empty())
+    {
+        WaitingStudent currentStudent = tempQueue.front();
+
+        if (currentStudent.StudentID == studentID &&
+            currentStudent.ResourceID == resourceID)
+        {
+            cout << "Student is already on the waiting list for this resource."
+                 << endl;
+            return;
+        }
+
+        tempQueue.pop();
+    }
+
     // Create a WaitingStudent object with the provided information
     WaitingStudent student;
 
@@ -13,6 +32,8 @@ void WaitingList::AddStudent(int studentID, string studentName, string resourceI
     // Add the student to the back of the queue
     // This maintains FIFO (First In, First Out) behavior
     waitingQueue.push(student);
+
+    cout << "Student added to waiting list." << endl;
 }
 
 
