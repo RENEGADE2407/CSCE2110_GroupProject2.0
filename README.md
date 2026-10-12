@@ -63,14 +63,14 @@ L--.gitignore
    cd CSCE2110_GroupProject2.0
 
 3. Compile the project:
-   g++ main.cpp Resource/Resource.cpp ResourceManager/ResourceManager.cpp Reservation/Reservation.cpp ReservationManager/ReservationManager.cpp "Waiting List/WaitingList.cpp" "Cancellation History/CancellationHistory.cpp" -o crrs
+   g++ -std=c++17 -Wall -Wextra -o ReservationSystem main.cpp ResourceManager/ResourceManager.cpp Resource/Resource.cpp ReservationManager/ReservationManager.cpp Reservation/Reservation.cpp "Waiting List/WaitingList.cpp" "Cancellation History/CancellationHistory.cpp"
 
 **_How to Run_**
 --------------------------------------------------------------------------------------------
 
 Run the executable:
 
-./crrs
+ReservationSystem.exe
 
 The program will load resources from resources.txt and reservations from reservations.txt and display a command-line menu.
 
