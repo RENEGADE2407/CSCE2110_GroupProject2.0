@@ -288,32 +288,48 @@ int main()
             case 6:
             {
                 int reservationID;
-
+            
                 cout << "Enter reservation ID to cancel: ";
                 cin >> reservationID;
-
+            
                 Reservation* reservation =
                     reservationManager.SearchReservation(
                         reservationID
                     );
-
+            
                 if (reservation == nullptr)
                 {
                     cout << "Reservation not found." << endl;
                     break;
                 }
-
+            
                 string resourceID =
                     reservation->GetResourceID();
-
+            
                 if (reservationManager.CancelReservation(
                         reservationID))
                 {
-                    resourceManager.SetResourceAvailability(
-                        resourceID,
-                        "Available"
-                    );
-
+                    // Check whether any active reservations still use this resource.
+                    int remainingReservations =
+                        reservationManager.CountReservedResources(
+                            resourceID
+                        );
+            
+                    if (remainingReservations == 0)
+                    {
+                        resourceManager.SetResourceAvailability(
+                            resourceID,
+                            "Available"
+                        );
+                    }
+                    else
+                    {
+                        resourceManager.SetResourceAvailability(
+                            resourceID,
+                            "Unavailable"
+                        );
+                    }
+            
                     cout << "Reservation cancelled successfully."
                          << endl;
                 }
@@ -322,7 +338,7 @@ int main()
                     cout << "Reservation could not be cancelled."
                          << endl;
                 }
-
+            
                 break;
             }
 
