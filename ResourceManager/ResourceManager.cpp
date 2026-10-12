@@ -297,7 +297,7 @@ void ResourceManager::DisplayMostRequestedResources() const
 
     cout << "\n=====MOST REQUESTED RESOURCES =====" << endl;
 
-    for(int i = 0; i < resources.size(); ++i)
+    for (size_t i = 0; i < resources.size(); ++i)
         {
             cout << i + 1 << ". " << resources[i].GetResourceName() << " | Requests: " << resources[i].GetRequestCount() << endl;
         }
